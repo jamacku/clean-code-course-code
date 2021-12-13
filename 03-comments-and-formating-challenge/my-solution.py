@@ -16,12 +16,10 @@ class DiskStorage:
 
     # Warning: Directory must exist in advance
     def insert_file(self, file_name, content):
-        file_path = self.get_directory_path() / file_name
-        file = open(file_path, 'w')
+        file = open(self.get_directory_path() / file_name, 'w')
         file.write(content)
         file.close()
         # Todo: Add proper error handling
-
 
 log_storage = DiskStorage('logs')
 
